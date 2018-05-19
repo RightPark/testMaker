@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="testMaker">
+  <head>
+    <title>메인화면</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <!-- 앵귤러 로딩 -->
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="/js/user.js"></script>
+  </head>
+  <script type="text/javascript">
+      var userId = "<%- userId || -1 %>";
+
+  </script>
+  <!-- ng-app으로 todomvc 앵귤러 모듈 사용을 브라우저에게 알린다 -->
+  <body ng-controller="MainCtrl">
+  <div class="main-layout">
+      <div class="main-title">지니 선생님의 퀴즈세상</div>
+      <div class="main-content">
+        <div class="main-menu"> <md-button href="/test" class="md-raised md-primary">시험보기</md-button></div>
+        <div class="main-menu"> <md-button href="/testResult"  class="md-raised md-primary">결과보기</md-button></div>
+        <div class="main-menu"> <md-button href="/board" class="md-raised md-primary">질문게시판</md-button></div>
+        <div class="main-menu"> <div class="bar"></div></div>
+          <%if(userId){ %>
+            <div class="main-menu"> <md-button href="/users/login" class="md-raised md-warn">로그아웃</md-button></div>
+
+          <%}else{ %>
+            <div class="main-menu"> <md-button href="/users/login" class="md-raised md-warn">로그인</md-button></div>
+            <div class="main-menu" > <md-button href="/users/join" class="md-raised md-warn">회원가입</md-button></div>
+          <%}%>
+      </div>
+
+  </div>
+
+
+  </body>
+</html>

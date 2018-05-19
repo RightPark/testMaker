@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="testMaker">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <!-- 앵귤러 로딩 -->
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="/js/testResultAdmin.js"></script>
+  </head>
+
+
+  <script type="text/javascript">
+      var userId = "<%- userId || 0 %>";
+
+  </script>
+  <!-- ng-app으로 todomvc 앵귤러 모듈 사용을 브라우저에게 알린다 -->
+  <body ng-controller="MainCtrl">
+  <div class="main-layout">
+    <div class="main-title">결과보기</div>
+    <div class="main-content">
+      <md-content layout-padding>
+        <div>
+          <fieldset class="standard" ng-repeat="item in test track by $index">
+            <legend>{{item.title}} </legend>
+            <textarea ng-show="item.content" readonly>{{item.content}}</textarea>
+            <P>정답 : {{item.correct}} </P>
+            <P>선택한 닶 : {{item.uCorrect}} </P>
+            <h3 style="color: #b53500">결과 : {{item.result}} </h3>
+          </fieldset>
+
+        </div>
+      </md-content>
+
+      <h2>점수 : {{total}} </h2>
+      <div class="main-menu" style="margin-top: 10px;" > <md-button  href="/admin/user" class="md-raised md-primary">확인</md-button></div>
+    </div>
+
+  </div>
+
+  </body>
+</html>
+
+
+<style>
+  checkboxdemoSyncing .checkboxDemo1 div {
+    clear: both; }
+
+  .checkboxdemoSyncing legend {
+    color: #3F51B5; }
+
+  .checkboxdemoSyncing legend code {
+    color: #3F51B5;
+    font-weight: normal; }
+
+  .checkboxdemoSyncing p {
+    padding-left: 8px; }
+
+  .checkboxdemoSyncing .info {
+    padding-left: 13px; }
+
+  .checkboxdemoSyncing div.standard {
+    padding: 8px;
+    padding-left: 15px; }
+
+  .checkboxdemoSyncing fieldset.standard {
+    border-style: solid;
+    border-width: 1px;
+    height: 100%; }
+
+  textarea{
+    resize: none;
+  }
+
+</style>

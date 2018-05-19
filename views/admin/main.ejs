@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="testMaker">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <!-- 앵귤러 로딩 -->
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <script src="/js/admin.js"></script>
+</head>
+<!-- ng-app으로 todomvc 앵귤러 모듈 사용을 브라우저에게 알린다 -->
+<body ng-controller="MainCtrl">
+<div class="main-layout">
+  <div class="main-title">관리자페이지</div>
+  <div class="main-content">
+
+      <div class="main-menu"> <md-button href="/admin/test" class="md-raised md-primary">문제생성</md-button></div>
+      <div class="main-menu"> <md-button href="/admin/user"  class="md-raised md-primary">학생관리</md-button></div>
+      <div class="main-menu"> <md-button  href="/admin/board"  class="md-raised md-primary">질문게시판</md-button></div>
+
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
